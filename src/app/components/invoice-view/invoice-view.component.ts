@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-invoice-view',
+  selector: 'invoice-view',
   standalone: true,
   imports: [],
   templateUrl: './invoice-view.component.html',
@@ -9,4 +9,6 @@ import { Component } from '@angular/core';
 })
 export class InvoiceViewComponent {
 
+  @Input() name!: string;
+  @Input() id!: number;
 }
