@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Invoice } from '../../models/invoice';
 import { Item } from '../../models/item';
 import { RowItemComponent } from '../row-item/row-item.component';
@@ -12,5 +12,11 @@ import { RowItemComponent } from '../row-item/row-item.component';
 export class ListItemsComponent {
 
 @Input() items: Item[] = [];
+
+@Output() removeEventEmiter: EventEmitter<number> = new EventEmitter();
+
+onRemove(id: number){
+this.removeEventEmiter.emit(id);
+}
 
 }
